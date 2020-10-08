@@ -1,6 +1,4 @@
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.nio.file.Paths;
@@ -10,8 +8,8 @@ import java.util.List;
 public class MainClient {
 
     public static void main(String[] args) {
-//        bynaryClient();
-        serialisableVersion();
+        bynaryClient();
+//        serialisableVersion();
     }
 
     public static void serialisableVersion(){
@@ -25,6 +23,7 @@ public class MainClient {
             e.printStackTrace();
         }
     }
+
 
     public static void bynaryClient(){
         try(Socket socket = new Socket("localhost", 8085)){
